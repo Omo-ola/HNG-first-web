@@ -27,9 +27,9 @@ article {
   }
 }
 .hero-text {
-  background-image: linear-gradient(to right, blue, red);
+ /* background-image: linear-gradient(to right, blue, red);
   background-clip: text;
-  color: transparent;
+  color: transparent;*/
 }
 .hero-h1 {
   font-size: 3.5rem;
