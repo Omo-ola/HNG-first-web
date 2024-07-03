@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HNG</title>
+    <style>
+      body {
+        max-width: 980px;
+        width: 90%;
+        margin: auto;
+        padding: 2rem 0;
+      }
+         article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .imgContainer {
+        width: 349px;
+        height: 349px;
+      }
+      .imgContainer img {
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        object-fit: cover;
+        padding: 0.5rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+      .link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+      }
+   
+    </style>
+  </head>
+  <body>
+    <article>
+      <div>
+        <p data-testid="slackDisplayName">Omoola</p>
+        <p data-testid="currentTimeUTC">Current Utc Time</p>
+        <p data-testid="currentDay">Current Day</p>
+        <p data-testid="slackEmail">olaywolaabdulramon96@gmail.com</p>
+      </div>
+      <div class="imgContainer">
+        <img
+          src="slackImg.jpg"
+          data-testid="slackProfilePicture"
+          alt="Slack Profile Picture"
+        />
+      </div>
+    </article>
+    <div class="link">
+      <a href="https://hng.tech/learn" data-testid="hngLink">HNG Tech</a>
+      <a href="https://keyword.dog" data-testid="hngLink">Keyword Dog</a>
+      <a href="https://scrapeanyweb.site" data-testid="hngLink">Scrape Any Web</a>
+    </div>
+  </body>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const utcTime = now.toUTCString().split(" ")[4];
+      const day = now.toLocaleString("en-us", { weekday: "long" });
+      document.querySelector("[data-testid='currentTimeUTC']").textContent =
+        utcTime;
+      document.querySelector("[data-testid='currentDay']").textContent = day;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</html>
